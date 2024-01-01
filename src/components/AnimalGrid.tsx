@@ -13,7 +13,6 @@ const AnimalGrid = ({ animalData, setAnimalDetails, animalQuery, setAnimalQuery 
   const handleButtonClick = (animalName: string) => {
     const selectedObject = animalData.find((animal) => animal.name === animalName);
     if (animalQuery !== animalName) {
-      console.log('awefawef')
       setAnimalQuery(animalName);
     }
     setAnimalDetails(selectedObject);

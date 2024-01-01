@@ -6,11 +6,14 @@ import useAnimalData from './hooks/useAnimalData';
 import WikipediaImage from './components/WikipediaImage';
 import AnimalDetails from './components/AnimalDetails';
 import AnimalGrid from './components/AnimalGrid';
+import StateIndicator from './components/StateIndicator';
 
 function App() {
   const [animalQuery, setAnimalQuery] = useState<string>('');
   const [animalDetails, setAnimalDetails] = useState<object | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [searchPerformed, setSearchPerformed] = useState<boolean>(false); 
+  const [currentState, setCurrentState] = useState<string>('initial');
   const { animalData, fetchData } = useAnimalData();
 
   useEffect(() => {
@@ -30,11 +33,22 @@ function App() {
     }
   }, [animalData]);
 
+  useEffect(() => {
+    setCurrentState(
+      isLoading ? 'loading' :
+      animalDetails ? 'details' :
+      animalData.length > 1 ? 'results' :
+      searchPerformed ? 'no results' :
+      'initial'
+    );
+  }, [animalData, animalDetails, isLoading, searchPerformed]);
+
   return (
     <>
+      <StateIndicator currentState={currentState} />
       {isLoading && <h1>LOADING...</h1>}
       <h3>{animalData.length}</h3>
-      <AnimalQueryForm animalQuery={animalQuery} setAnimalQuery={setAnimalQuery} fetchData={fetchData} setIsLoading={setIsLoading}/>
+      <AnimalQueryForm animalQuery={animalQuery} setAnimalQuery={setAnimalQuery} fetchData={fetchData} setIsLoading={setIsLoading} setSearchPerformed={setSearchPerformed}/>
       {animalData && animalData.length > 1 && !animalDetails && (
         <AnimalGrid animalData={animalData} setAnimalQuery={setAnimalQuery} setAnimalDetails={setAnimalDetails} />
       )}

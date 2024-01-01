@@ -5,9 +5,10 @@ interface Props {
   setAnimalQuery: React.Dispatch<React.SetStateAction<string>>;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
   fetchData: (name: string) => void;
+  setSearchPerformed: (searchPerformed: boolean) => void;
 }
 
-function AnimalQueryForm({ animalQuery, setAnimalQuery, setIsLoading, fetchData }: Props) {
+function AnimalQueryForm({ animalQuery, setAnimalQuery, setIsLoading, fetchData, setSearchPerformed }: Props) {
   const [inputValue, setInputValue] = useState(animalQuery);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -16,6 +17,7 @@ function AnimalQueryForm({ animalQuery, setAnimalQuery, setIsLoading, fetchData 
     fetchData(inputValue);
     setAnimalQuery(inputValue);
     setIsLoading(true);
+    setSearchPerformed(true)
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -6,7 +6,7 @@ Tech Stack
 - API Ninjas Animals API: Provides animal-related data.
 - Wikipedia API: Used for fetching additional details.
 
-### How It Works
+## How It Works
 - Users input an animal name via the search form.
 - AnimalDex fetches data from the API Ninjas Animals API.
 - The application displays details about the specified animal.
@@ -18,7 +18,6 @@ Tech Stack
 - Change image logic to use a state for the image URL
 - Add placeholder image when image URL === ''
 - Add images for custom search options
-- Add header with indicator of current search step
 - Style layout with CSS grid
 - Style app with Pokedex theme
 - Updated Lifespan disclaimer to be (!) popup
