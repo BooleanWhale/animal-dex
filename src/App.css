@@ -1,5 +1,7 @@
 :root {
   font-size: 10px;
+  --gray: 150,150,150;
+  --dark-gray: 50,50,50;
 }
 
 #root {
@@ -10,7 +12,9 @@
 }
 
 body {
-font-size: 1.6rem;
+  font-size: 1.6rem;
+  color: rgb(0,0,0);
+  background:rgb(250,250,250);
 }
 
 .logo {
@@ -49,6 +53,8 @@ font-size: 1.6rem;
   color: #888;
 }
 
+
+/* State indicators */
 .state-indicators {
   display: flex;
   align-items: center;
@@ -130,4 +136,55 @@ font-size: 1.6rem;
   100% {
     opacity: 1;
   }
+}
+
+/* Animal image */
+.section--animal-image {
+  display: flex;
+  justify-content: center;
+}
+
+.animal-image {
+  position: relative;
+  width: 100%;
+  max-width: 50rem;
+  height: auto;
+  border: solid 2rem rgb(var(--gray));
+  border-radius: 3rem;
+  background: rgb(var(--dark-gray));
+  overflow: hidden;
+}
+
+.animal-image img {
+  position: relative;
+  display: block;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.animal-image img.placeholder {
+  opacity: 0.05;
+}
+
+.animal-image:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 1rem;
+  box-shadow: inset 0 1px 5px rgba(0,0,0,1);
+}
+
+.animal-image span {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0;
+  color: rgb(var(--gray));
+  background: rgba(0,0,0,0.5);
 }

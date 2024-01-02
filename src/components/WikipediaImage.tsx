@@ -1,12 +1,15 @@
 // WikipediaImage.tsx
 import React, { useEffect, useState } from 'react';
+import placeholder from '../assets/animal-placeholder.png';
 import axios from 'axios';
 
 interface WikipediaImageProps {
   animalQuery: string;
+  animalDetails: object | null;
+  isLoading: boolean;
 }
 
-const WikipediaImage: React.FC<WikipediaImageProps> = ({ animalQuery }) => {
+const WikipediaImage: React.FC<WikipediaImageProps> = ({ animalQuery, animalDetails, isLoading }) => {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
 
   useEffect(() => {
@@ -28,13 +31,12 @@ const WikipediaImage: React.FC<WikipediaImageProps> = ({ animalQuery }) => {
   }, [animalQuery]);
 
   return (
-    <div>
-      {imageUrl ? (
-        <img src={imageUrl} alt="Wikipedia" style={{ maxWidth: '100%' }} />
-      ) : (
-        <p>No image found</p>
-      )}
-    </div>
+    <section className="section section--animal-image">
+      <div className="animal-image">
+        {animalDetails && !imageUrl && <span>No image available</span>}
+        <img src={imageUrl && animalDetails && !isLoading ? imageUrl : placeholder} className={imageUrl && animalDetails && !isLoading ? '' : 'placeholder'} alt="Wikipedia" style={{ maxWidth: '100%' }} />
+      </div>
+    </section>
   );
 };
 

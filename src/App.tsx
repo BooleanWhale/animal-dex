@@ -46,6 +46,7 @@ function App() {
   return (
     <>
       <StateIndicator currentState={currentState} />
+      <WikipediaImage animalQuery={animalQuery} animalDetails={animalDetails} isLoading={isLoading} />
       {isLoading && <h1>LOADING...</h1>}
       {currentState === 'no-results' && <h2>No results.</h2>}
       <AnimalQueryForm animalQuery={animalQuery} setAnimalQuery={setAnimalQuery} fetchData={fetchData} setIsLoading={setIsLoading} setSearchPerformed={setSearchPerformed}/>
@@ -54,7 +55,6 @@ function App() {
       )}
       {animalDetails && !isLoading && (
         <>
-          <WikipediaImage animalQuery={animalQuery} />
           <AnimalDetails animalDetails={animalDetails} animalQuery={animalQuery} />
         </>
       )}

@@ -3,7 +3,7 @@ interface AnimalData {
 }
 
 interface Props {
-  animalData: AnimalData[];
+  animalData: AnimalData[] | null;
   animalQuery: string;
   setAnimalQuery: (name: string) => void;
   setAnimalDetails: (animal: AnimalData | undefined) => void;
@@ -11,7 +11,7 @@ interface Props {
 
 const AnimalGrid = ({ animalData, setAnimalDetails, animalQuery, setAnimalQuery }: Props) => {
   const handleButtonClick = (animalName: string) => {
-    const selectedObject = animalData.find((animal) => animal.name === animalName);
+    const selectedObject = animalData?.find((animal) => animal.name === animalName);
     if (animalQuery !== animalName) {
       setAnimalQuery(animalName);
     }

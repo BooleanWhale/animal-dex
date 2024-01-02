@@ -5,7 +5,7 @@ interface AnimalDetails {
 }
 
 interface Props {
-  animalDetails: AnimalDetails;
+  animalDetails: AnimalDetails | null;
 }
 
 const AnimalDetails = ({ animalDetails }:Props) => {
