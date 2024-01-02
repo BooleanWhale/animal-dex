@@ -38,7 +38,7 @@ function App() {
       isLoading ? 'loading' :
       animalDetails ? 'details' :
       animalData.length > 1 ? 'results' :
-      searchPerformed ? 'no results' :
+      searchPerformed ? 'no-results' :
       'initial'
     );
   }, [animalData, animalDetails, isLoading, searchPerformed]);
@@ -47,7 +47,7 @@ function App() {
     <>
       <StateIndicator currentState={currentState} />
       {isLoading && <h1>LOADING...</h1>}
-      <h3>{animalData.length}</h3>
+      {currentState === 'no-results' && <h2>No results.</h2>}
       <AnimalQueryForm animalQuery={animalQuery} setAnimalQuery={setAnimalQuery} fetchData={fetchData} setIsLoading={setIsLoading} setSearchPerformed={setSearchPerformed}/>
       {animalData && animalData.length > 1 && !animalDetails && (
         <AnimalGrid animalData={animalData} setAnimalQuery={setAnimalQuery} setAnimalDetails={setAnimalDetails} />
