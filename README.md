@@ -14,9 +14,6 @@ Tech Stack
 ## TODO
 - Add custom search options in JS object
 - Move custom search options into seperate JSON file
-- Make image visible at all times
-- Change image logic to use a state for the image URL
-- Add placeholder image when image URL === ''
 - Add images for custom search options
 - Style layout with CSS grid
 - Style app with Pokedex theme
