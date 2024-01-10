@@ -46,7 +46,7 @@ function AnimalQueryForm({ animalQuery, setAnimalQuery, setIsLoading, fetchData,
             ref={inputRef}
           />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={inputValue.trim() === ''}>Submit</button>
       </form>
     </div>
   );
