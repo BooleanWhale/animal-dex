@@ -32,9 +32,11 @@ const WikipediaImage: React.FC<WikipediaImageProps> = ({ animalQuery, animalDeta
 
   return (
     <section className="section section--animal-image">
-      <div className="animal-image">
-        {animalDetails && !imageUrl && <span>No image available</span>}
-        <img src={imageUrl && animalDetails && !isLoading ? imageUrl : placeholder} className={imageUrl && animalDetails && !isLoading ? '' : 'placeholder'} alt="Wikipedia" style={{ maxWidth: '100%' }} />
+      <div className="page-width">
+        <div className="animal-image">
+          {animalDetails && !imageUrl && <span>No image available</span>}
+          <img src={imageUrl && animalDetails && !isLoading ? imageUrl : placeholder} className={imageUrl && animalDetails && !isLoading ? '' : 'placeholder'} alt="Wikipedia" style={{ maxWidth: '100%' }} />
+        </div>
       </div>
     </section>
   );

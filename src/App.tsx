@@ -1,6 +1,8 @@
 // efwef
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import './styles/global.css';
+import './styles/pollen.css';
 import AnimalQueryForm from './components/AnimalQueryForm';
 import useAnimalData from './hooks/useAnimalData';
 import WikipediaImage from './components/WikipediaImage';
@@ -44,12 +46,16 @@ function App() {
   }, [animalData, animalDetails, isLoading, searchPerformed]);
 
   return (
-    <>
-      <StateIndicator currentState={currentState} />
+    <main className="main-layout">
+      <header className="header">
+        <div className="header__content page-width">
+          <StateIndicator currentState={currentState} />
+          <AnimalQueryForm animalQuery={animalQuery} setAnimalQuery={setAnimalQuery} fetchData={fetchData} setIsLoading={setIsLoading} setSearchPerformed={setSearchPerformed}/>
+        </div>
+      </header>
       <WikipediaImage animalQuery={animalQuery} animalDetails={animalDetails} isLoading={isLoading} />
       {isLoading && <h1>LOADING...</h1>}
       {currentState === 'no-results' && <h2>No results.</h2>}
-      <AnimalQueryForm animalQuery={animalQuery} setAnimalQuery={setAnimalQuery} fetchData={fetchData} setIsLoading={setIsLoading} setSearchPerformed={setSearchPerformed}/>
       {animalData && animalData.length > 1 && !animalDetails && (
         <AnimalGrid animalData={animalData} setAnimalQuery={setAnimalQuery} setAnimalDetails={setAnimalDetails} />
       )}
@@ -58,7 +64,7 @@ function App() {
           <AnimalDetails animalDetails={animalDetails} animalQuery={animalQuery} />
         </>
       )}
-    </>
+    </main>
   );
 }
 

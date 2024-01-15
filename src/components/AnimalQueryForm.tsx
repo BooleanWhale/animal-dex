@@ -1,4 +1,5 @@
 import React, { useState, FormEvent, useEffect, useRef } from 'react';
+import searchIcon from '../assets/icon-search.svg';
 
 interface Props {
   animalQuery: string;
@@ -37,16 +38,23 @@ function AnimalQueryForm({ animalQuery, setAnimalQuery, setIsLoading, fetchData,
   return (
     <div className="query-form">
       <form onSubmit={handleFormSubmit}>
-        <label>
-          Animal Query:
-          <input
-            type="text"
-            value={inputValue}
-            onChange={handleInputChange}
-            ref={inputRef}
-          />
-        </label>
-        <button type="submit" disabled={inputValue.trim() === ''}>Submit</button>
+        <div className="query-form__search">
+          <label>
+            <span className='visually-hidden'>Animal Query</span>
+            <input
+              type="text"
+              value={inputValue}
+              onChange={handleInputChange}
+              ref={inputRef}
+              placeholder='Search an animal name'
+              className='query-form__input'
+            />
+          </label>
+          <button type="submit" disabled={inputValue.trim() === ''}>
+            <img className='icon' src={ searchIcon } alt="Search"/>
+            <span className='visually-hidden'>submit</span>
+          </button>
+        </div>
       </form>
     </div>
   );

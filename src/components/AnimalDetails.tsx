@@ -22,7 +22,7 @@ const AnimalDetails = ({ animalDetails }:Props) => {
         {key !== 'name' && (
           <>
             {typeof value === 'object' ? (
-              <div id={`details-${key}`}>
+              <div className="details" id={`details-${key}`}>
                 <p><b>{key.replace(/_/g, ' ')}</b></p>
                 {renderContent(value)}
               </div>
@@ -38,12 +38,17 @@ const AnimalDetails = ({ animalDetails }:Props) => {
     ));
   };
   
-
   return (
-    <div>
-      <h1>{animalDetails.name}</h1>
-      {renderContent(animalDetails)}
-    </div>
+    <section className="section--details">
+      <div className="animal-name page-width">
+        <h1 className="animal-name__title">{animalDetails.name}</h1>
+      </div>
+      <div className='page-width'>
+        <div className="details-container scanline-bg">
+          {renderContent(animalDetails)}
+        </div>
+      </div>
+    </section>
   );
 };
 
