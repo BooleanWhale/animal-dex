@@ -61,6 +61,10 @@ body {
   gap: 1rem;
 }
 
+.state-indicators .emboss {
+  border-radius: 50%;
+}
+
 .state-indicator {
   --color: 20,40,100;
   --opacity: 0.4;
@@ -81,9 +85,16 @@ body {
   opacity: 1;
   width: 100%;
   height: 100%;
-  background: red;
   background: rgba(var(--color),var(--opacity));
+  box-shadow: inset 0 0 10px rgba(0,0,0,1);
+}
+
+.state-indicator.active:before {
   box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.state-indicator.state-indicator--loading:before {
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.7);
 }
 
 .state-indicator:after {
@@ -101,25 +112,33 @@ body {
 
 .state-indicator.active {
   --opacity: 1;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
 }
 
 .state-indicator--loading {
   --opacity: 1;
-  --color: 20,190,390;
+  --color: 0,200,255;
   height: 4rem;
   width: 4rem;
 }
 
 .state-indicator--no-results {
-  --color: 250,60,40;
+  --color: 255,50,60;
 }
 
 .state-indicator--results {
-  --color: 250,200,10;
+  --color: 255,190,20;
 }
 
 .state-indicator--details {
   --color: 110,250,10;
+}
+.state-indicator.active {
+  box-shadow: 0 0 15px rgba(var(--color),0.7);
+}
+
+.state-indicator--loading {
+  box-shadow: 0 0 20px rgba(var(--color),0.7);
 }
 
 .state-indicator--loading.active:before {
@@ -149,9 +168,9 @@ body {
   width: 100%;
   max-width: 50rem;
   height: auto;
-  border: solid 2rem rgb(var(--gray));
-  border-radius: 3rem;
-  background: rgb(var(--dark-gray));
+  /* border: solid 3px rgb(var(--gray)); */
+  /* border-radius: 3rem; */
+  /* background: rgb(var(--dark-gray)); */
   overflow: hidden;
 }
 

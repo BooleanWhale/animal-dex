@@ -47,7 +47,7 @@ function AnimalQueryForm({ animalQuery, setAnimalQuery, setIsLoading, fetchData,
               onChange={handleInputChange}
               ref={inputRef}
               placeholder='Search an animal name'
-              className='query-form__input'
+              className='query-form__input emboss-large'
             />
           </label>
           <button type="submit" disabled={inputValue.trim() === ''}>
