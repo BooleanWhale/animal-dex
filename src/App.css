@@ -123,11 +123,11 @@ body {
 }
 
 .state-indicator--no-results {
-  --color: 255,50,60;
+  --color: 255,60,0;
 }
 
 .state-indicator--results {
-  --color: 255,190,20;
+  --color: 255,220,20;
 }
 
 .state-indicator--details {

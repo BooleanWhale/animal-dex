@@ -41,7 +41,7 @@ const AnimalDetails = ({ animalDetails }:Props) => {
   return (
     <section className="section--details">
       <div className='page-width'>
-        <div className="details-container scanline-bg">
+        <div className="details-container scanline-bg emboss-large">
         <div className="animal-name">
           <h1 className="animal-name__title">{animalDetails?.name}</h1>
           {animalDetails?.taxonomy?.scientific_name && <span className="animal-name__suntitle">{ animalDetails.taxonomy.scientific_name }</span>}
