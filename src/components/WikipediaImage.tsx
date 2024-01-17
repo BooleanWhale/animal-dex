@@ -7,9 +7,10 @@ interface WikipediaImageProps {
   animalQuery: string;
   animalDetails: object | null;
   isLoading: boolean;
+  currentState: string;
 }
 
-const WikipediaImage: React.FC<WikipediaImageProps> = ({ animalQuery, animalDetails, isLoading }) => {
+const WikipediaImage: React.FC<WikipediaImageProps> = ({ animalQuery, animalDetails, isLoading, currentState }) => {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const WikipediaImage: React.FC<WikipediaImageProps> = ({ animalQuery, animalDeta
   }, [animalQuery]);
 
   return (
-    <section className="section section--animal-image">
+    <section className={`section section--animal-image section--animal-image--${currentState}`}>
       <div className="page-width">
         <div className="animal-image emboss">
           {animalDetails && !imageUrl && <span>No image available</span>}

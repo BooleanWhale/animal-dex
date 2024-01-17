@@ -53,7 +53,7 @@ function App() {
           <AnimalQueryForm animalQuery={animalQuery} setAnimalQuery={setAnimalQuery} fetchData={fetchData} setIsLoading={setIsLoading} setSearchPerformed={setSearchPerformed}/>
         </div>
       </header>
-      <WikipediaImage animalQuery={animalQuery} animalDetails={animalDetails} isLoading={isLoading} />
+      <WikipediaImage animalQuery={animalQuery} animalDetails={animalDetails} currentState={currentState} isLoading={isLoading} />
       {isLoading && <h1>LOADING...</h1>}
       {currentState === 'no-results' && <h2>No results.</h2>}
       {animalData && animalData.length > 1 && !animalDetails && (

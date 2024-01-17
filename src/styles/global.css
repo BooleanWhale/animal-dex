@@ -133,7 +133,8 @@ input:focus {
   padding-top: var(--size-6);
   padding-bottom: var(--size-6);
   border-bottom: solid 1px rgba(0,0,0,0.3);
-  box-shadow: var(--shadow-md);
+  /* box-shadow: var(--shadow-md); */
+  border-bottom: solid 5px rgb(138, 31, 33);
 }
 
 .header__content {
@@ -184,15 +185,21 @@ input:focus {
 
 /* Animal image */
 .section--animal-image {
-  padding-top: var(--size-6);
-  padding-bottom: var(--size-6);
   background: #212121;
-  /* margin-top: var(--size-6); */
+  transition: height ease 200ms;
+  overflow: hidden;
+  max-height: 0vh;
+  /* max-height: 100vh; */
+  transition: max-height ease-in-out 500ms;
+  border-bottom: solid 5px rgb(180, 53, 55);
+}
+
+.section--animal-image.section--animal-image--details {
+  max-height: 100vh;
 }
 
 .animal-image {
-  margin-left: auto;
-  margin-right: auto;
+  margin: var(--size-6) auto;
   border-radius: 1rem;
 }
 
