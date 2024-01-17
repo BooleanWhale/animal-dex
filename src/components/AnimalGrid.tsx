@@ -19,21 +19,17 @@ const AnimalGrid = ({ animalData, setAnimalDetails, animalQuery, setAnimalQuery 
   };
 
   return (
-    <div className='page-width'>
-      <div className="details-container scanline-bg emboss-large">
-        <ul className="search-results list-unstyled">
-          {animalData.map((data) => {
-            return (
-              <li className="search-results__result" key={data.name}>
-                <button onClick={() => handleButtonClick(data.name)}>
-                  {data.name}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </div>
+    <ul className="search-results list-unstyled">
+      {animalData.map((data) => {
+        return (
+          <li className="search-results__result" key={data.name}>
+            <button onClick={() => handleButtonClick(data.name)}>
+              {data.name}
+            </button>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

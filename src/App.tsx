@@ -54,16 +54,21 @@ function App() {
         </div>
       </header>
       <WikipediaImage animalQuery={animalQuery} animalDetails={animalDetails} currentState={currentState} isLoading={isLoading} />
-      {isLoading && <h1>LOADING...</h1>}
-      {currentState === 'no-results' && <h2>No results.</h2>}
-      {animalData && animalData.length > 1 && !animalDetails && (
-        <AnimalGrid animalData={animalData} setAnimalQuery={setAnimalQuery} setAnimalDetails={setAnimalDetails} />
-      )}
-      {animalDetails && !isLoading && (
-        <>
-          <AnimalDetails animalDetails={animalDetails} animalQuery={animalQuery} />
-        </>
-      )}
+      <div className='page-width'>
+        <div className="details-container scanline-bg emboss-large">
+        {currentState === 'initial' && <h2>Make a search for detailed animal information</h2>}
+        {isLoading && <h2>LOADING...</h2>}
+        {currentState === 'no-results' && <h2>No results.</h2>}
+        {animalData && animalData.length > 1 && !animalDetails && (
+          <AnimalGrid animalData={animalData} setAnimalQuery={setAnimalQuery} setAnimalDetails={setAnimalDetails} />
+        )}
+        {animalDetails && !isLoading && (
+          <>
+            <AnimalDetails animalDetails={animalDetails} animalQuery={animalQuery} />
+          </>
+        )}
+        </div>
+      </div>
     </main>
   );
 }
