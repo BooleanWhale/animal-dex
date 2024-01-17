@@ -38,6 +38,7 @@ body {
   margin: 0;
   background: rgb(var(--color-dex-red));
   min-height: 100vh;
+  padding-bottom: var(--size-8);
 }
 
 button {
@@ -104,6 +105,12 @@ input:focus {
   padding-right: var(--page-padding);
   margin-left: auto;
   margin-right: auto;
+}
+
+.list-unstyled {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .emboss {
@@ -187,6 +194,28 @@ input:focus {
   margin-left: auto;
   margin-right: auto;
   border-radius: 1rem;
+}
+
+/* Search results */
+.search-results {
+  padding: var(--size-6) 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-3);
+}
+
+.search-results__result button {
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  background: rgba(0, 53, 118, 0.5);
+  padding: var(--size-4);
+  border: solid 1px rgb(72, 200, 255);
+  color: rgb(116, 205, 243);
+  transition: background ease 200ms;
+}
+
+.search-results__result button:hover {
+  background: rgba(0, 53, 118, 0.7);
 }
 
 /* Details */

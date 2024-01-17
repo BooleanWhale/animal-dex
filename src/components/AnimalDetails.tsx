@@ -42,10 +42,10 @@ const AnimalDetails = ({ animalDetails }:Props) => {
     <section className="section--details">
       <div className='page-width'>
         <div className="details-container scanline-bg emboss-large">
-        <div className="animal-name">
-          <h1 className="animal-name__title">{animalDetails?.name}</h1>
-          {animalDetails?.taxonomy?.scientific_name && <span className="animal-name__suntitle">{ animalDetails.taxonomy.scientific_name }</span>}
-        </div>
+          <div className="animal-name">
+            <h1 className="animal-name__title">{animalDetails?.name}</h1>
+            {animalDetails?.taxonomy?.scientific_name && <span className="animal-name__suntitle">{ animalDetails.taxonomy.scientific_name }</span>}
+          </div>
           {renderContent(animalDetails && animalDetails)}
         </div>
       </div>
