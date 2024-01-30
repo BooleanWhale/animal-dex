@@ -261,7 +261,6 @@ input:focus {
   );
 }
 
-
 .animal-name {
  display: flex;
  flex-wrap: wrap;
@@ -302,4 +301,53 @@ input:focus {
 
 .details p {
   margin: var(--size-2) 0;
+  order: 1;
+  font-weight: 400;
+}
+
+.details p span:first-child {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.details p#details-lifespan {
+  order: 2;
+}
+
+.section--details #details-characteristics {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 750px) {
+  .section--details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 var(--size-2);
+  }
+
+  .section--details .animal-name,
+  .section--details #details-characteristics {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .section--details #details-characteristics {
+    flex-direction: row;
+    gap: 0 var(--size-10);
+  }
+
+  .section--details #details-characteristics h2 {
+    width: 100%;
+  }
+
+  .section--details #details-characteristics p {
+    min-width: 35%;
+    max-width: 50%;
+    flex-basis: 0;
+    flex-grow: 1;
+  }
 }
