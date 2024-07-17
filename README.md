@@ -17,3 +17,6 @@ Tech Stack
 - Updated Lifespan disclaimer to be (!) popup
 - Move lifespan details to seperate JSON file
 - Add manual redirects (eg orca -> killer whale)
+
+
+https://github.com/user-attachments/assets/236d36ac-4c1e-4b90-9c68-03c9b588cba7
