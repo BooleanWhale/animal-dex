@@ -11,12 +11,11 @@ Tech Stack
 - AnimalDex fetches data from the API Ninjas Animals API.
 - The application displays details about the specified animal.
 
+https://github.com/user-attachments/assets/236d36ac-4c1e-4b90-9c68-03c9b588cba7
+
 ## TODO
 - Move custom search results into seperate JSON file
 - Add images for custom search options
 - Updated Lifespan disclaimer to be (!) popup
 - Move lifespan details to seperate JSON file
 - Add manual redirects (eg orca -> killer whale)
-
-
-https://github.com/user-attachments/assets/236d36ac-4c1e-4b90-9c68-03c9b588cba7
