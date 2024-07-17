@@ -12,11 +12,8 @@ Tech Stack
 - The application displays details about the specified animal.
 
 ## TODO
-- Add custom search options in JS object
-- Move custom search options into seperate JSON file
+- Move custom search results into seperate JSON file
 - Add images for custom search options
-- Style layout with CSS grid
-- Style app with Pokedex theme
 - Updated Lifespan disclaimer to be (!) popup
 - Move lifespan details to seperate JSON file
 - Add manual redirects (eg orca -> killer whale)
